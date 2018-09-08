@@ -1,0 +1,5 @@
+rotate sphere with buttons
+change sphere's velocity with buttons
+change sphere's acceleration with buttons. 
+move camera around object.
+instead of start and stop, have acceleration and deceleration.

@@ -9,6 +9,7 @@ public class SphereMovement : MonoBehaviour
     public float speed = 1f;
     Vector3 zeroVeocity;
 
+
 	void Start ()
 	{
 	    myRigidBody = GetComponent<Rigidbody>();
@@ -17,12 +18,33 @@ public class SphereMovement : MonoBehaviour
 
     void Update()
     {
-        MoveUp();
-        MoveDown();
-        ConstantMovement();
+        //MoveUp();
+        //MoveDown();
+        //ConstantMovement();
+        Acell();
     }
 
 
+    private void Acell()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            myRigidBody.velocity = Vector3.back * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.O))
+        {
+            myRigidBody.velocity += Vector3.back * speed * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.I))
+        {
+            myRigidBody.velocity -= Vector3.back * speed * Time.deltaTime;
+        }
+
+
+    }
+
+    /*
     private void MoveUp()
     {
         if (Input.GetKeyDown(KeyCode.Keypad8))
@@ -63,6 +85,6 @@ public class SphereMovement : MonoBehaviour
             myRigidBody.velocity = zeroVeocity;
         }
     }
-
+    */
 
 }
